@@ -1,0 +1,13 @@
+package com.ratingreview.userservices.services;
+
+import java.util.List;
+
+import com.ratingreview.userservices.entities.User;
+
+public interface UserServiceI {
+	
+	//Create
+	User createUser(User userDto);
+	//Retrieve All
+
+}

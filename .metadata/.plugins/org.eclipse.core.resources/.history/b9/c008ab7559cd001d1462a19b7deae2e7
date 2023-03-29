@@ -1,0 +1,5 @@
+package com.ratingreview.userservices.repositories;
+
+public interface UserRepository {
+
+}

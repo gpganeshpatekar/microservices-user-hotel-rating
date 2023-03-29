@@ -1,0 +1,55 @@
+package com.ratingreview.userservices.services.impl;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.ratingreview.userservices.payloads.UserDto;
+import com.ratingreview.userservices.services.UserServiceI;
+
+@Service
+public class UserServiceImpl implements UserServiceI {
+
+	@Override
+	public UserDto createUser(UserDto userDto) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<UserDto> getAllUsers() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public UserDto getUserById(String userId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public UserDto updateUser(String userId, UserDto UserDto) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteUser(String userId) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public String activateUser(String userId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String deactivateUser(String userId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

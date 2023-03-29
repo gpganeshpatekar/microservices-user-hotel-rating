@@ -1,0 +1,5 @@
+package com.ratingreview.userservices.services;
+
+public interface UserServiceI {
+
+}

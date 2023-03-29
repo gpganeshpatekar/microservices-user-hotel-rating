@@ -1,0 +1,5 @@
+package com.ratingreview.userservices.exceptions;
+
+public class GlobalExceptionHandler {
+
+}
