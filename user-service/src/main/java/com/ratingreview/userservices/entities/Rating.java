@@ -1,5 +1,8 @@
 package com.ratingreview.userservices.entities;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,7 +17,11 @@ public class Rating {
 	private String ratingId;
 	private String userId;
 	private String hotelId;
+	private LocalDate checkInDate;
+	private LocalDate checkOutDate;
 	private Integer rating;
 	private String feedback;
+	private LocalDateTime createdDate;
+	private LocalDateTime updatedDate;
 	
 }
