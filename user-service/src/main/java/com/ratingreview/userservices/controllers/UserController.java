@@ -3,6 +3,8 @@ package com.ratingreview.userservices.controllers;
 import java.util.List;
 import java.util.UUID;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,11 +18,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+import com.ratingreview.userservices.entities.User;
 import com.ratingreview.userservices.payloads.ApiResponse;
 import com.ratingreview.userservices.payloads.UserDto;
 import com.ratingreview.userservices.services.UserServiceI;
+import com.ratingreview.userservices.services.impl.UserServiceImpl;
 
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import jakarta.validation.Valid;
+import lombok.Builder;
 
 @RestController
 @RequestMapping("/users")
@@ -28,6 +34,8 @@ public class UserController {
 	
 	@Autowired
 	private UserServiceI userService;
+	
+	private Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
 	
 //	TO CREATE A NEW USER
 	@PostMapping(value = "/",consumes = "application/json",produces = "application/json")
@@ -48,9 +56,26 @@ public class UserController {
 	
 //  TO GET A USER BY USER ID
 	@GetMapping(value = "/{userId}",produces = "application/json")
+	@CircuitBreaker(name = "ratingHotelBreaker", fallbackMethod = "ratingHotelFallBack")
 	public ResponseEntity<UserDto> getUserById(@PathVariable("userId") String userId){
 		UserDto user = this.userService.getUserById(userId);
 		return new ResponseEntity<UserDto>(user,HttpStatus.OK);
+	}
+	
+//	CREATING FALL BACK METHOD FOR CIRCUIT BREAKER
+	public ResponseEntity<UserDto> ratingHotelFallBack(String userId, Exception ex){
+		logger.info("Fallback is executed because service is down : ",ex.getMessage());
+		UserDto userDto = new UserDto();
+		
+		userDto.setName("Dummy");
+		userDto.setGender("M");
+		userDto.setAge(18);
+		userDto.setAbout("I am Dummy I am here because some services are down");
+		userDto.setEmail("dummy@gmail.com");
+		userDto.setMobile("9000012345");
+		userDto.setPassword("Dummy123#");
+		userDto.setActive(true);
+		return new ResponseEntity<UserDto>(userDto,HttpStatus.OK);
 	}
 	
 //	TO GET A USER BY USER EMAIL
