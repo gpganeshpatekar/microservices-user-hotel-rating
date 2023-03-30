@@ -17,6 +17,7 @@ import org.springframework.web.client.RestTemplate;
 import com.ratingreview.userservices.entities.Rating;
 import com.ratingreview.userservices.entities.User;
 import com.ratingreview.userservices.exceptions.ResourceNotFoundException;
+import com.ratingreview.userservices.external.services.HotelService;
 import com.ratingreview.userservices.payloads.HotelDto;
 import com.ratingreview.userservices.payloads.RatingDto;
 import com.ratingreview.userservices.payloads.UserDto;
@@ -34,6 +35,9 @@ public class UserServiceImpl implements UserServiceI {
 
 	@Autowired
 	private RestTemplate restTemplate;
+	
+	@Autowired
+	private HotelService hotelService;
 
 	private Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
 
@@ -64,9 +68,12 @@ public class UserServiceImpl implements UserServiceI {
 		List<RatingDto> ratings = Arrays.stream(ratingOfUser).toList();
 
 		ratings.stream().map(rating -> {
-
-			HotelDto hotelDto = restTemplate.getForObject("http://HOTEL-SERVICE/hotels/" + rating.getHotelId(), HotelDto.class);
+			
+			HotelDto hotelDto = this.hotelService.getHotel(rating.getHotelId());
 			rating.setHotel(hotelDto);
+
+//			HotelDto hotelDto = restTemplate.getForObject("http://HOTEL-SERVICE/hotels/" + rating.getHotelId(), HotelDto.class);
+//			rating.setHotel(hotelDto);
 
 			return rating;
 		}).collect(Collectors.toList());
