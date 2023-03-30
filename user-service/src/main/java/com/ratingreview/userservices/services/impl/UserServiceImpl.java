@@ -59,13 +59,13 @@ public class UserServiceImpl implements UserServiceI {
 				.orElseThrow(() -> new ResourceNotFoundException("COULD NOT FIND A USER WITH ID : " + userId));
 
 		RatingDto[] ratingOfUser = this.restTemplate
-				.getForObject("http://localhost:8083/ratings/users/" + user.getUserId(), RatingDto[].class);
+				.getForObject("http://RATING-SERVICE/ratings/users/" + user.getUserId(), RatingDto[].class);
 
 		List<RatingDto> ratings = Arrays.stream(ratingOfUser).toList();
 
 		ratings.stream().map(rating -> {
 
-			HotelDto hotelDto = restTemplate.getForObject("http://localhost:8082/hotels/" + rating.getHotelId(), HotelDto.class);
+			HotelDto hotelDto = restTemplate.getForObject("http://HOTEL-SERVICE/hotels/" + rating.getHotelId(), HotelDto.class);
 			rating.setHotel(hotelDto);
 
 			return rating;
