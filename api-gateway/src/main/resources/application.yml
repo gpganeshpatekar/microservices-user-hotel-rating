@@ -15,7 +15,8 @@ spring:
       - id: HOTEL-SERVICE
         uri: lb://HOTEL-SERVICE
         predicates:
-        - Path=/hotels/**
+        - Path=/hotels/**,/staffs/**
+ #       - Path=/** you can use this to allow all urls
       - id: RATING-SERVICE
         uri: lb://RATING-SERVICE
         predicates:
