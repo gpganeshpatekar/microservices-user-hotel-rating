@@ -1,14 +1,24 @@
 package com.ratingreview.userservices.services.impl;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
+import com.ratingreview.userservices.entities.Rating;
 import com.ratingreview.userservices.entities.User;
 import com.ratingreview.userservices.exceptions.ResourceNotFoundException;
+import com.ratingreview.userservices.payloads.HotelDto;
+import com.ratingreview.userservices.payloads.RatingDto;
 import com.ratingreview.userservices.payloads.UserDto;
 import com.ratingreview.userservices.repositories.UserRepository;
 import com.ratingreview.userservices.services.UserServiceI;
@@ -21,6 +31,11 @@ public class UserServiceImpl implements UserServiceI {
 
 	@Autowired
 	private ModelMapper modelMapper;
+
+	@Autowired
+	private RestTemplate restTemplate;
+
+	private Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
 
 	@Override
 	public UserDto createUser(UserDto userDto) {
@@ -39,8 +54,25 @@ public class UserServiceImpl implements UserServiceI {
 
 	@Override
 	public UserDto getUserById(String userId) {
+
 		User user = this.userRepository.findById(userId)
 				.orElseThrow(() -> new ResourceNotFoundException("COULD NOT FIND A USER WITH ID : " + userId));
+
+		RatingDto[] ratingOfUser = this.restTemplate
+				.getForObject("http://localhost:8083/ratings/users/" + user.getUserId(), RatingDto[].class);
+
+		List<RatingDto> ratings = Arrays.stream(ratingOfUser).toList();
+
+		ratings.stream().map(rating -> {
+
+			HotelDto hotelDto = restTemplate.getForObject("http://localhost:8082/hotels/" + rating.getHotelId(), HotelDto.class);
+			rating.setHotel(hotelDto);
+
+			return rating;
+		}).collect(Collectors.toList());
+
+		user.setRatings(ratings);
+
 		return this.modelMapper.map(user, UserDto.class);
 	}
 

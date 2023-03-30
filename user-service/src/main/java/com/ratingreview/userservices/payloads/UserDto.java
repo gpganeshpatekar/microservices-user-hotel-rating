@@ -55,7 +55,7 @@ public class UserDto {
 	private LocalDateTime updatedDateAndTime;
 	
 	@Transient
-	private List<Rating> ratings = new ArrayList<>();
+	private List<RatingDto> ratings = new ArrayList<>();
 	
 
 }

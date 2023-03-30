@@ -3,6 +3,8 @@ package com.ratingreview.userservices.entities;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,11 +19,13 @@ public class Rating {
 	private String ratingId;
 	private String userId;
 	private String hotelId;
+//	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd-MM-yyyy", timezone = "IST")
 	private LocalDate checkInDate;
+//	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd-MM-yyyy", timezone = "IST")
 	private LocalDate checkOutDate;
 	private Integer rating;
 	private String feedback;
-	private LocalDateTime createdDate;
-	private LocalDateTime updatedDate;
+	private LocalDateTime createdDateAndTime;
+	private LocalDateTime updatedDateAndTime;
 	
 }

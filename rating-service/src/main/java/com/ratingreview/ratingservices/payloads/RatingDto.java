@@ -23,5 +23,6 @@ public class RatingDto {
 	private String feedback;
 	private LocalDateTime createdDateAndTime;
 	private LocalDateTime updatedDateAndTime;
+	
 
 }

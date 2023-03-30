@@ -7,6 +7,8 @@ import java.util.List;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
+import com.ratingreview.userservices.payloads.RatingDto;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -52,7 +54,7 @@ public class User {
 	private LocalDateTime updatedDateAndTime;
 	
 	@Transient
-	private List<Rating> ratings = new ArrayList<>();
+	private List<RatingDto> ratings = new ArrayList<>();
 	
 	
 }
