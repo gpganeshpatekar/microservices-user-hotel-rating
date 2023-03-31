@@ -25,6 +25,7 @@ import com.ratingreview.userservices.services.UserServiceI;
 import com.ratingreview.userservices.services.impl.UserServiceImpl;
 
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
 import io.github.resilience4j.retry.annotation.Retry;
 import jakarta.validation.Valid;
 import lombok.Builder;
@@ -58,8 +59,10 @@ public class UserController {
 //  TO GET A USER BY USER ID
 	@GetMapping(value = "/{userId}",produces = "application/json")
 //	@CircuitBreaker(name = "ratingHotelBreaker", fallbackMethod = "ratingHotelFallBack")
-	@Retry(name = "ratingHotelService",fallbackMethod = "ratingHotelFallBack" )
+//	@Retry(name = "ratingHotelService",fallbackMethod = "ratingHotelFallBack" )
+	@RateLimiter(name = "userRateLimiter",fallbackMethod = "ratingHotelFallBack")
 	public ResponseEntity<UserDto> getUserById(@PathVariable("userId") String userId){
+		logger.info("Get Single User Hanlder : UserController");
 		logger.info("Retry Count: {}",retryCount);
 		UserDto user = this.userService.getUserById(userId);
 		return new ResponseEntity<UserDto>(user,HttpStatus.OK);
