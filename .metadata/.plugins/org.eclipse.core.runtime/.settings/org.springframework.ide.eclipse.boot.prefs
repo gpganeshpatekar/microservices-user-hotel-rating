@@ -1,11 +1,11 @@
 eclipse.preferences.version=1
-org.springframework.ide.eclipse.boot.wizard.PopularityTracker.cloud-config-server=1
-org.springframework.ide.eclipse.boot.wizard.PopularityTracker.cloud-eureka=2
+org.springframework.ide.eclipse.boot.wizard.PopularityTracker.cloud-config-server=2
+org.springframework.ide.eclipse.boot.wizard.PopularityTracker.cloud-eureka=3
 org.springframework.ide.eclipse.boot.wizard.PopularityTracker.cloud-eureka-server=1
 org.springframework.ide.eclipse.boot.wizard.PopularityTracker.cloud-gateway=1
 org.springframework.ide.eclipse.boot.wizard.PopularityTracker.cloud-starter=2
 org.springframework.ide.eclipse.boot.wizard.PopularityTracker.data-jpa=3
-org.springframework.ide.eclipse.boot.wizard.PopularityTracker.devtools=4
+org.springframework.ide.eclipse.boot.wizard.PopularityTracker.devtools=5
 org.springframework.ide.eclipse.boot.wizard.PopularityTracker.lombok=4
 org.springframework.ide.eclipse.boot.wizard.PopularityTracker.mysql=3
 org.springframework.ide.eclipse.boot.wizard.PopularityTracker.validation=3

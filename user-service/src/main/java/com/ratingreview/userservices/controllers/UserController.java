@@ -25,6 +25,7 @@ import com.ratingreview.userservices.services.UserServiceI;
 import com.ratingreview.userservices.services.impl.UserServiceImpl;
 
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import io.github.resilience4j.retry.annotation.Retry;
 import jakarta.validation.Valid;
 import lombok.Builder;
 
@@ -53,18 +54,22 @@ public class UserController {
 		List<UserDto> users = this.userService.getAllUsers();
 		return new ResponseEntity<List<UserDto>>(users,HttpStatus.OK);
 	}
-	
+	int retryCount = 1;
 //  TO GET A USER BY USER ID
 	@GetMapping(value = "/{userId}",produces = "application/json")
-	@CircuitBreaker(name = "ratingHotelBreaker", fallbackMethod = "ratingHotelFallBack")
+//	@CircuitBreaker(name = "ratingHotelBreaker", fallbackMethod = "ratingHotelFallBack")
+	@Retry(name = "ratingHotelService",fallbackMethod = "ratingHotelFallBack" )
 	public ResponseEntity<UserDto> getUserById(@PathVariable("userId") String userId){
+		logger.info("Retry Count: {}",retryCount);
 		UserDto user = this.userService.getUserById(userId);
 		return new ResponseEntity<UserDto>(user,HttpStatus.OK);
 	}
 	
+	
 //	CREATING FALL BACK METHOD FOR CIRCUIT BREAKER
 	public ResponseEntity<UserDto> ratingHotelFallBack(String userId, Exception ex){
-		logger.info("Fallback is executed because service is down : ",ex.getMessage());
+		
+//		logger.info("Fallback is executed because service is down : ",ex.getMessage());
 		UserDto userDto = new UserDto();
 		
 		userDto.setName("Dummy");
