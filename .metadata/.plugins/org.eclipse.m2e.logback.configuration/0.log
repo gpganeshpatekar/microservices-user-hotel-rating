@@ -3800,3 +3800,51 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact com.okta.spri
 2023-03-31 13:29:47,863 [Worker-109: Launching api-gateway - ApiGatewayApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
 2023-03-31 13:29:48,049 [Worker-109: Launching api-gateway - ApiGatewayApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
 2023-03-31 13:29:48,060 [Worker-109: Launching api-gateway - ApiGatewayApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\microservices-projects\microservices-user-hotel-rating\api-gateway\src\test\resources
+2023-03-31 13:52:23,360 [Worker-112: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.rating-review.userservices:user-service:0.0.1-SNAPSHOT @ D:\microservices-projects\microservices-user-hotel-rating\user-service\pom.xml.
+2023-03-31 13:52:25,958 [Worker-112: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-oauth2-client/3.0.5/spring-boot-starter-oauth2-client-3.0.5.jar
+2023-03-31 13:52:26,011 [Worker-112: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-oauth2-client/3.0.5/spring-boot-starter-oauth2-client-3.0.5.jar
+2023-03-31 13:52:33,831 [Worker-96: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-oauth2-client/3.0.5/spring-boot-starter-oauth2-client-3.0.5-sources.jar
+2023-03-31 13:52:34,064 [Worker-96: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-oauth2-client/3.0.5/spring-boot-starter-oauth2-client-3.0.5-sources.jar
+2023-03-31 13:52:34,075 [Worker-96: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.springframework.boot:spring-boot-starter-oauth2-client:3.0.5
+2023-03-31 13:52:35,114 [Worker-112: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-31 13:52:35,115 [Worker-112: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-31 13:52:35,125 [Worker-112: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\microservices-projects\microservices-user-hotel-rating\user-service\src\test\resources
+2023-03-31 13:52:42,242 [Worker-116: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-31 13:52:42,253 [Worker-116: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-31 13:52:42,272 [Worker-116: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\microservices-projects\microservices-user-hotel-rating\user-service\src\test\resources
+2023-03-31 14:43:50,588 [Worker-124: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-31 14:43:51,344 [Worker-124: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-03-31 14:43:51,358 [Worker-124: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\microservices-projects\microservices-user-hotel-rating\user-service\src\test\resources
+2023-03-31 14:44:26,536 [Worker-125: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-31 14:44:27,335 [Worker-125: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-31 14:44:27,472 [Worker-125: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\microservices-projects\microservices-user-hotel-rating\user-service\src\test\resources
+2023-03-31 14:46:49,242 [Worker-124: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-31 14:46:49,488 [Worker-124: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-31 14:46:49,502 [Worker-124: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\microservices-projects\microservices-user-hotel-rating\user-service\src\test\resources
+2023-03-31 14:47:03,591 [Worker-127: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-31 14:47:03,658 [Worker-127: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-31 14:47:03,662 [Worker-127: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\microservices-projects\microservices-user-hotel-rating\user-service\src\test\resources
+2023-03-31 14:48:24,242 [Worker-124: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-31 14:48:24,496 [Worker-124: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-31 14:48:24,501 [Worker-124: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\microservices-projects\microservices-user-hotel-rating\user-service\src\test\resources
+2023-03-31 14:48:30,179 [Worker-126: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-31 14:48:30,206 [Worker-126: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-31 14:48:30,211 [Worker-126: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\microservices-projects\microservices-user-hotel-rating\user-service\src\test\resources
+2023-03-31 14:50:23,612 [Worker-124: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-31 14:50:23,811 [Worker-124: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-31 14:50:23,817 [Worker-124: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\microservices-projects\microservices-user-hotel-rating\user-service\src\test\resources
+2023-03-31 14:50:46,265 [Worker-126: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-31 14:50:46,350 [Worker-126: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-31 14:50:46,357 [Worker-126: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\microservices-projects\microservices-user-hotel-rating\user-service\src\test\resources
+2023-03-31 14:58:43,953 [Worker-124: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-31 14:58:44,371 [Worker-124: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-31 14:58:44,378 [Worker-124: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\microservices-projects\microservices-user-hotel-rating\user-service\src\test\resources
+2023-03-31 15:08:11,162 [Worker-131: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-31 15:08:11,377 [Worker-131: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-31 15:08:11,385 [Worker-131: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\microservices-projects\microservices-user-hotel-rating\user-service\src\test\resources
+2023-03-31 15:08:17,478 [Worker-131: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-31 15:08:17,635 [Worker-131: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-31 15:08:17,640 [Worker-131: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\microservices-projects\microservices-user-hotel-rating\user-service\src\test\resources
+2023-03-31 15:09:32,033 [Worker-131: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-31 15:09:32,326 [Worker-131: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-03-31 15:09:32,334 [Worker-131: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\microservices-projects\microservices-user-hotel-rating\user-service\src\test\resources

@@ -11,9 +11,6 @@ INDEX VERSION 1.131+D:\microservices-projects\microservices-user-hotel-rating\.m
 3531321493.index
 992944262.index
 3216995155.index
-4209045738.index
-759489909.index
-1181468423.index
 3790391082.index
 1679987703.index
 2430536453.index
@@ -23,7 +20,6 @@ INDEX VERSION 1.131+D:\microservices-projects\microservices-user-hotel-rating\.m
 667011175.index
 966365593.index
 2189870958.index
-3963019199.index
 3366334160.index
 3015946115.index
 338208317.index
@@ -51,10 +47,7 @@ INDEX VERSION 1.131+D:\microservices-projects\microservices-user-hotel-rating\.m
 2524915972.index
 2024381888.index
 2449743505.index
-1827637981.index
 1685357259.index
-3547523765.index
-2906549755.index
 3640833027.index
 564183729.index
 2464547217.index
@@ -76,9 +69,7 @@ INDEX VERSION 1.131+D:\microservices-projects\microservices-user-hotel-rating\.m
 3133893766.index
 4001812123.index
 1137065220.index
-2468119728.index
 3549805047.index
-3544395826.index
 3740496610.index
 4161081952.index
 3995260653.index
@@ -87,7 +78,6 @@ INDEX VERSION 1.131+D:\microservices-projects\microservices-user-hotel-rating\.m
 1524512638.index
 1758774626.index
 614642820.index
-1765418623.index
 3617671703.index
 4125385137.index
 1018658627.index
@@ -139,7 +129,6 @@ INDEX VERSION 1.131+D:\microservices-projects\microservices-user-hotel-rating\.m
 1463726642.index
 3141736095.index
 4131852966.index
-3059777329.index
 1516999251.index
 2227838403.index
 4284092251.index
@@ -181,7 +170,6 @@ INDEX VERSION 1.131+D:\microservices-projects\microservices-user-hotel-rating\.m
 3696531462.index
 1808003034.index
 3356168771.index
-4145404912.index
 2222119901.index
 1478075061.index
 422083326.index
@@ -205,11 +193,8 @@ INDEX VERSION 1.131+D:\microservices-projects\microservices-user-hotel-rating\.m
 247051169.index
 3350639444.index
 673860792.index
-1240776890.index
 97708668.index
-1448454242.index
 3341258488.index
-3957643439.index
 3288162580.index
 1809935360.index
 1502901196.index
@@ -225,7 +210,6 @@ INDEX VERSION 1.131+D:\microservices-projects\microservices-user-hotel-rating\.m
 827495231.index
 1135451974.index
 4156721296.index
-183968139.index
 2006132814.index
 2972059523.index
 1259247409.index
@@ -251,5 +235,4 @@ INDEX VERSION 1.131+D:\microservices-projects\microservices-user-hotel-rating\.m
 3896659758.index
 3366850444.index
 256941760.index
-2909277357.index
 3345514282.index
