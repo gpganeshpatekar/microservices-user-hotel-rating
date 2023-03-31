@@ -33,3 +33,12 @@ spring:
 #    service-url:
 #      defaultZone: http://localhost:8079/eureka
 
+#okta configuration of api-gateway
+okta:
+  oauth2:
+    issuer: https://dev-26569891.okta.com/oauth2/default
+    audience: api://default
+    client-id: 0oa8xipb99wDnMnnM5d7
+    client-secret: br8qqtyMDCbbEJHXnDTHzSBzejueqShrRIhTq6rk
+    scopes: openid, profile, email, offline_access
+    
