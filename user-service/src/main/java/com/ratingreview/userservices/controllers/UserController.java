@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -40,6 +41,7 @@ public class UserController {
 	private Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
 	
 //	TO CREATE A NEW USER
+	@PreAuthorize("hasAuthority('SCOPE_internal') || hasAuthority('Admin')")
 	@PostMapping(value = "/",consumes = "application/json",produces = "application/json")
 	public ResponseEntity<UserDto> saveUser(@Valid @RequestBody UserDto userDto){
 		String randomUserId = UUID.randomUUID().toString();
@@ -50,6 +52,7 @@ public class UserController {
 	}
 	
 //	TO GET ALL USERS
+	@PreAuthorize("hasAuthority('SCOPE_internal') || hasAuthority('Admin')")
 	@GetMapping(value = "/",produces = "application/json")
 	public ResponseEntity<List<UserDto>> getAllUsers(){
 		List<UserDto> users = this.userService.getAllUsers();
@@ -87,6 +90,7 @@ public class UserController {
 	}
 	
 //	TO GET A USER BY USER EMAIL
+	@PreAuthorize("hasAuthority('SCOPE_internal') || hasAuthority('Admin')")
 	@GetMapping(value = "email/{email}",produces = "application/json")
 	public ResponseEntity<UserDto> getUserByEmail(@PathVariable("email") String email){
 		UserDto user = this.userService.getByEmail(email);
@@ -94,6 +98,7 @@ public class UserController {
 	}
 	
 //	TO UPDATE A USER 
+	@PreAuthorize("hasAuthority('SCOPE_internal') || hasAuthority('Admin')")
 	@PutMapping (value = "/{userId}",consumes = "application/json",produces = "application/json")
 	public ResponseEntity<UserDto> updateUser(@Valid @PathVariable("userId") String userId,@RequestBody UserDto userDto){
 		UserDto update = this.userService.updateUser(userId, userDto);
@@ -101,6 +106,7 @@ public class UserController {
 	}
 	
 //	 TO DELET A USER
+	@PreAuthorize("hasAuthority('SCOPE_internal') || hasAuthority('Admin')")
 	@DeleteMapping(value = "/{userId}")
 	public ResponseEntity<ApiResponse> deleteUser(@PathVariable String userId){
 		this.userService.deleteUser(userId);
@@ -108,6 +114,7 @@ public class UserController {
 	}
 	
 //	 TO RE-ACTIVATE A USER
+	@PreAuthorize("hasAuthority('SCOPE_internal') || hasAuthority('Admin')")
 	@PutMapping(value = "activate/{userId}")
 	public ResponseEntity<ApiResponse> activateUser(@PathVariable String userId){
 		this.userService.activateUser(userId);
@@ -115,6 +122,7 @@ public class UserController {
 	}
 	
 //	 TO DEACTIVATE A USER
+	@PreAuthorize("hasAuthority('SCOPE_internal') || hasAuthority('Admin')")
 	@PutMapping(value = "deactivate/{userId}")
 	public ResponseEntity<ApiResponse> deactivateUser(@PathVariable String userId){
 		this.userService.deactivateUser(userId);

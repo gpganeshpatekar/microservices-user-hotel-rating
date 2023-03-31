@@ -2,7 +2,6 @@ INDEX VERSION 1.131+D:\microservices-projects\microservices-user-hotel-rating\.m
 1486107768.index
 360142583.index
 3763663316.index
-2960399442.index
 1612174524.index
 4103365620.index
 260553798.index
